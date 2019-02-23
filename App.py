@@ -2,6 +2,9 @@ from flask import Flask, redirect, url_for
 from flask import render_template
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from jinja2 import Template
+
+user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
 
 top_answer = ''
 winner = ''
@@ -32,8 +35,7 @@ round2responses = []
 round3 = ''
 round3responses = []
 
-def getResponses():
-    for player in list_of_hashes:
+for player in list_of_hashes:
         for key,value in player.items():
             if key == 'GIF1':
                 round1 = value
@@ -47,6 +49,15 @@ def getResponses():
                 round2responses.append(value)
             if key == 'Text3':
                 round3responses.append(value)
+
+def getinputs():
+    inputs = {round1: round1responses, round2: round2responses, round3:round3responses}
+    inputs = str(inputs)
+    return inputs 
+
+def parseData():
+    with open("outputs.txt", "w") as text_file:
+        text_file.write(getinputs())
 
 def updateScores():
     for response in round1responses:
@@ -115,40 +126,41 @@ def land():
 # Loading page whilst waiting for responses
 @app.route("/load")
 def load():
-  return render_template('loading.html')
+    return render_template('loading.html')
 
 # When 3 confirms are in
 @app.route("/ready")
 def ready():
-  if checkstart():
-    return render_template('loading.html')
-  else:
-    return render_template('ready.html')
+    parseData()
+    if checkstart():
+        return render_template('loading.html')
+    else:
+        return render_template('ready.html')
 
 # Overview: Graph 
 @app.route("/end")
 def end():
-  return render_template('overview.html')
+    return render_template('overview.html')
 
 # Question Time
 @app.route("/questions")
 def questions():
-  return render_template('questions.html')
+    return render_template('questions.html', Q1 = round1, A11 = round1responses[0], A12 = round1responses[1], A13 = round1responses[2], Q2 = round2, A21 = round2responses[0], A22 = round2responses[1], A23 = round2responses[2], Q3 = round2, A31 = round2responses[0], A32 = round2responses[1], A33 = round2responses[2])
 
 # Scores for each question
 @app.route("/score")
 def score():
-  return render_template('score.html')
+    return render_template('score.html' )
 
 # Admin Page for Admins to change topic
 @app.route("/admin")
 def admin():
-  return render_template('admin.html')
+    return render_template('admin.html')
 
 
 @app.route("/test")
 def test():
-  return render_template('test.html')
+    return render_template('test.html')
 
 if __name__ == "__main__":
   app.run()

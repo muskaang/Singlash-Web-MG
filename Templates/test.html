@@ -1,5 +1,5 @@
-<html>
-<body>
-    <a href=”/your_flask_funtion”><input type=”button” value=”call_flask_funtion”></a>
-</body>
-</html>
+{% extends "test.html" %}
+{% block content %}
+ <p>{{ myfunction() }}</p>
+</body> 
+{% endblock %}
