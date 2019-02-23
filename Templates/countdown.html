@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+</style>
+
+</head>
+<body>
+
+<script>
+var timeleft = 5;
+var downloadTimer = setInterval(function(){
+  document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+  timeleft -= 1;
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+  }
+  window.setTimeout(function () {
+        location.href = "ready";
+    }, 5000);
+}, 1000);
+</script>
+<progress value="0" max="10" id="progressBar"></progress>
+<div id="countdown"></div>
+</body>
