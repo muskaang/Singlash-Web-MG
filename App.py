@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask import render_template
+
 
 app = Flask(__name__)
 
@@ -16,6 +17,8 @@ def load():
 # When 3 confirms are in
 @app.route("/ready")
 def ready():
+    """ if (checkstart()):
+        redirect(url_for('questions')) """
   return render_template('ready.html')
 
 # Overview: Graph 
