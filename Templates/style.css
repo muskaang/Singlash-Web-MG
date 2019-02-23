@@ -1,9 +1,4 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Question 1!</title>
-<style>
-	
+
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
 ol,ul{list-style:none;margin:0;padding:0;}
@@ -85,11 +80,6 @@ input[type="submit"] {
 	  float:right;
 	  margin-top: 14px;
 }
-.span0 {
-	 width: 41%;
-	  float:left;
-	  margin-top: 14px;
-}
 .span1 i {
 	position:relative;
 	border-left:solid 1px #25418D;
@@ -141,63 +131,6 @@ input[type="submit"] {
 }
 
 .span1 i:active::before {
-	top:-3px;
-	-webkit-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-	-moz-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-	-o-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-	box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-}
-.span0 i {
-	position:relative;
-	border-left:solid 1px #25418D;
-	font-size: 1.1em;
-	color: #fff;
-	background:#3257BC;
-	padding: 15px 76px;
-	border-radius: 5px 0 0 5px;
-	-moz-border-radius: 5px 0 0 5px;
-	-o-border-radius: 5px 0 0 5px;
-	-webkit-border-radius: 5px 0 0 5px;
-	-webkit-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-	-moz-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-	-o-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-	box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-}
-.span0 i:active {
-	top:3px;
-	background:#3257BC;
-	-webkit-box-shadow: inset 0px 1px 0px #3257BC, 0px 2px 0px 0px #25418D, 2px 10px 5px #363747;
-	-moz-box-shadow: inset 0px 1px 0px #3257BC, 0px 2px 0px 0px #25418D, 2px 10px 5px #363747;
-	-o-box-shadow: inset 0px 1px 0px #3257BC, 0px 2px 0px 0px #25418D, 2px 10px 5px #363747;
-	box-shadow: inset 0px 1px 0px #3257BC, 0px 2px 0px 0px #25418D, 0px 5px 3px #363747;
-}
-
-.span0 i::before {
-	background: url(../images/home.png) no-repeat #2C51B7 14px 14px;
-	content:"";
-	float:right;
-	padding: 46px 26px;
-	position:absolute;
-	display:block;
-	padding-top:8px;
-	top:0px;
-	right:-36px;
-	font-size:16px;
-	font-weight:bold;
-	color:#8fd1ea;
-	text-shadow:1px 1px 0px #07526e;
-	border-right:solid 1px #25418D;
-	border-radius:0 5px 5px 0;
-	-moz-border-radius: 0 5px 5px 0;
-	-o-border-radius: 0 5px 5px 0;
-	-webkit-border-radius:0 5px 5px 0;
-	-webkit-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-	-moz-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-	-o-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-	box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
-}
-
-.span0 i:active::before {
 	top:-3px;
 	-webkit-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
 	-moz-box-shadow: inset 0px 1px 0px #3257BC, 0px 5px 0px 0px #25418D, 2px 10px 5px #363747;
@@ -473,51 +406,4 @@ input[type="submit"] {
 		padding: 20px 24px;
 		background: url(../images/art.png) no-repeat #DF4C70 14px 7px;
 	}
-	
 }
-
-</style>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-</head>
-<body>
-<!-- start-buttons -->
-<div class="buttons">
-		<div class="span1">
-			 <a href="#">
-				 <i>4</i>
-				 <div class="clear"></div>
-			 </a>
-		 </div>
-		 <div class="clear"></div>
-
-		 <div class="span1">
-			 <a href="#">
-				 <i>3</i>
-				 <div class="clear"></div>
-			 </a>
-		 </div>
-		 <div class="clear"></div>	
-
-		 <div class="span2">
-			 <a href="#">
-				 <i>2</i><img src="images/contact.png" alt=""/>
-				 <div class="clear"></div>
-			 </a>
-		 </div>
-		 <div class="span3">
-			 <a href="#">
-				 <i>1</i><img src="images/art.png" alt=""/>
-				 <div class="clear"></div>
-			 </a>
-		 </div>
-	  
-		 <div class="clear"></div>	
-	 </div>	
-<div class="footer">
-	<p></a></p>
-</div>
-</body>
-</html>
-
