@@ -58,70 +58,147 @@ def getinputs():
 def parseData():
     with open("outputs.txt", "w") as text_file:
         text_file.write(getinputs())
+parseData()
+def updateScoresA11():
+    list_of_hashes[0]['GIF1score'] += 1
+    list_of_hashes[0]['Total'] += 1
+    sheet.update_cell((2), 11, list_of_hashes[0]['GIF1score'])
+    sheet.update_cell((2), 14, list_of_hashes[0]['Total'])
 
-def updateScores():
-    for response in round1responses:
-        if userinput == response:
-            list_of_hashes[round1responses.index(userinput)]['GIF1score'] += 1
-            list_of_hashes[round1responses.index(userinput)]['Total'] += 1
-            sheet.update_cell((round1responses.index(userinput)+2), 11, list_of_hashes[round1responses.index(userinput)]['GIF1score'])
-            sheet.update_cell((round1responses.index(userinput)+2), 14, list_of_hashes[round1responses.index(userinput)]['Total'])
-        
-    for response in round2responses:
-        if userinput == response:
-            list_of_hashes[round2responses.index(userinput)]['GIF2score'] += 1
-            list_of_hashes[round2responses.index(userinput)]['Total'] += 1
-            sheet.update_cell((round2responses.index(userinput)+2), 12, list_of_hashes[round2responses.index(userinput)]['GIF2score'])
-            sheet.update_cell((round2responses.index(userinput)+2), 14, list_of_hashes[round2responses.index(userinput)]['Total'])
-        
-        
-    for response in round3responses:
-        if userinput == response:
-            list_of_hashes[round3responses.index(userinput)]['GIF3score'] += 1
-            list_of_hashes[round3responses.index(userinput)]['Total'] += 1
-            sheet.update_cell((round3responses.index(userinput)+2), 13, list_of_hashes[round3responses.index(userinput)]['GIF3score'])
-            sheet.update_cell((round3responses.index(userinput)+2), 14, list_of_hashes[round3responses.index(userinput)]['Total'])
-
-def checkwinner():
-    scores = []
-    top1 = []
-    top2 = []
-    top3 = []
-    for player in list_of_hashes:
-        scores.append(player['GIF1score'])
-        scores.append(player['GIF2score'])
-        scores.append(player['GIF3score'])
-    scores = list(set(sorted(scores)))
+def updateScoresA12():
+    list_of_hashes[1]['GIF1score'] += 1
+    list_of_hashes[1]['Total'] += 1
+    sheet.update_cell((3), 11, list_of_hashes[1]['GIF1score'])
+    sheet.update_cell((3), 14, list_of_hashes[1]['Total'])
     
-    for player in list_of_hashes:
-        if player['GIF1score'] == scores[-1]:
-            top1.append(player['Text1'])
-        if player['GIF1score'] == scores[-2]:
-            top2.append(player['Text1'])
-        if player['GIF1score'] == scores[-3]:
-            top3.append(player['Text1'])
-        if player['GIF2score'] == scores[-1]:
-            top1.append(player['Text2'])
-        if player['GIF2score'] == scores[-2]:
-            top2.append(player['Text2'])
-        if player['GIF2score'] == scores[-3]:
-            top3.append(player['Text2'])
-        if player['GIF3score'] == scores[-1]:
-            top1.append(player['Text3'])
-        if player['GIF3score'] == scores[-2]:
-            top2.append(player['Text3'])
-        if player['GIF3score'] == scores[-3]:
-            top3.append(player['Text3'])
-    print('top1:',top1,'\n','top2:',top2,'\n','top3:',top3)
-            
-checkwinner()
+def updateScoresA13():
+    list_of_hashes[2]['GIF1score'] += 1
+    list_of_hashes[2]['Total'] += 1
+    sheet.update_cell((4), 11, list_of_hashes[1]['GIF1score'])
+    sheet.update_cell((4), 14, list_of_hashes[1]['Total'])
+
+def updateScoresA21():
+    list_of_hashes[0]['GIF2score'] += 1
+    list_of_hashes[0]['Total'] += 1
+    sheet.update_cell((2), 12, list_of_hashes[0]['GIF2score'])
+    sheet.update_cell((2), 14, list_of_hashes[0]['Total'])
+
+def updateScoresA22():
+    list_of_hashes[1]['GIF2score'] += 1
+    list_of_hashes[1]['Total'] += 1
+    sheet.update_cell((3), 12, list_of_hashes[1]['GIF2score'])
+    sheet.update_cell((3), 14, list_of_hashes[1]['Total'])
+    
+def updateScoresA23():
+    list_of_hashes[2]['GIF2score'] += 1
+    list_of_hashes[2]['Total'] += 1
+    sheet.update_cell((4), 12, list_of_hashes[2]['GIF2score'])
+    sheet.update_cell((4), 14, list_of_hashes[2]['Total'])
+
+def updateScoresA31():
+    list_of_hashes[0]['GIF3score'] += 1
+    list_of_hashes[0]['Total'] += 1
+    sheet.update_cell((2), 13, list_of_hashes[0]['GIF3score'])
+    sheet.update_cell((2), 14, list_of_hashes[0]['Total'])
+
+def updateScoresA32():
+    list_of_hashes[1]['GIF3score'] += 1
+    list_of_hashes[1]['Total'] += 1
+    sheet.update_cell((3), 13, list_of_hashes[1]['GIF3score'])
+    sheet.update_cell((3), 14, list_of_hashes[1]['Total'])
+    
+def updateScoresA33():
+    list_of_hashes[2]['GIF3score'] += 1
+    list_of_hashes[2]['Total'] += 1
+    sheet.update_cell((4), 13, list_of_hashes[2]['GIF3score'])
+    sheet.update_cell((4), 14, list_of_hashes[2]['Total'])
+
+def getScoreA11():
+    return list_of_hashes[0]['GIF1score']
+
+def getScoreA12():
+    return list_of_hashes[1]['GIF1score']
+
+def getScoreA13():
+    return list_of_hashes[2]['GIF1score']
+
+
+def getScoreA21():
+    return list_of_hashes[0]['GIF2score']
+
+def getScoreA22():
+    return list_of_hashes[1]['GIF2score']
+
+def getScoreA23():
+    return list_of_hashes[2]['GIF2score']
+
+def getScoreA31():
+    return list_of_hashes[0]['GIF3score']
+
+def getScoreA32():
+    return list_of_hashes[1]['GIF3score']
+
+def getScoreA33():
+    return list_of_hashes[2]['GIF3score']
+scores = []
+top1 = []
+top2 = []
+top3 = []
+for player in list_of_hashes:
+    try:
+        scores.append(int(player['GIF1score']))
+        scores.append(int(player['GIF2score']))
+        scores.append(int(player['GIF3score']))
+    except:
+        pass
+scores = list(set(sorted(scores)))
+    
+for player in list_of_hashes:
+    if player['GIF1score'] == scores[-1]:
+        top1.append(player['Text1'])
+    if player['GIF1score'] == scores[-2]:
+        top2.append(player['Text1'])
+    if player['GIF1score'] == scores[-3]:
+        top3.append(player['Text1'])
+    if player['GIF2score'] == scores[-1]:
+        top1.append(player['Text2'])
+    if player['GIF2score'] == scores[-2]:
+        top2.append(player['Text2'])
+    if player['GIF2score'] == scores[-3]:
+        top3.append(player['Text2'])
+    if player['GIF3score'] == scores[-1]:
+        top1.append(player['Text3'])
+    if player['GIF3score'] == scores[-2]:
+        top2.append(player['Text3'])
+    if player['GIF3score'] == scores[-3]:
+        top3.append(player['Text3'])
+
+
+
+def getScoreP1():
+    return round(list_of_hashes[0]['Total']/(list_of_hashes[0]['Total']+ list_of_hashes[1]['Total']+ list_of_hashes[2]['Total']) * 100,2)
+
+def getScoreP2():
+    return round(list_of_hashes[1]['Total']/(list_of_hashes[0]['Total']+ list_of_hashes[1]['Total']+ list_of_hashes[2]['Total']) * 100,2)
+
+def getScoreP3():
+    return round(list_of_hashes[2]['Total']/(list_of_hashes[0]['Total']+ list_of_hashes[1]['Total']+ list_of_hashes[2]['Total']) * 100,2)
+
+def P1user():
+    return list_of_hashes[0]['Username']
+
+def P2user():
+    return list_of_hashes[1]['Username']
+
+def P3user():
+    return list_of_hashes[2]['Username']
 
 app = Flask(__name__)
 
 # Landing Page
-@app.route("/")
+@app.route("/land")
 def land():
-  return redirect(url_for('load'))
+    return render_template('landing.html')
 
 # Loading page whilst waiting for responses
 @app.route("/load")
@@ -145,7 +222,57 @@ def end():
 # Question Time
 @app.route("/questions")
 def questions():
-    return render_template('questions.html', Q1 = round1, A11 = round1responses[0], A12 = round1responses[1], A13 = round1responses[2], Q2 = round2, A21 = round2responses[0], A22 = round2responses[1], A23 = round2responses[2], Q3 = round2, A31 = round2responses[0], A32 = round2responses[1], A33 = round2responses[2])
+    return render_template('questions.html', Q1 = round1, A11 = round1responses[0], A12 = round1responses[1], A13 = round1responses[2])
+
+@app.route("/question2")
+def question2():
+    return render_template('question2.html', Q2 = round2, A21 = round2responses[0], A22 = round2responses[1], A23 = round2responses[2])
+
+@app.route("/analytics1")
+def analytics1():
+    return render_template('analytics1.html', Q1 = round1, A11 = round1responses[0], A12 = round1responses[1], A13 = round1responses[2], A11P = updateScoresA11(), scoreA11 = getScoreA11(), scoreA12 = getScoreA12(), scoreA13 = getScoreA13())
+
+@app.route("/analytics12")
+def analytics12():
+    return render_template('analytics1.html', Q1 = round1, A11 = round1responses[0], A12 = round1responses[1], A13 = round1responses[2], A12P = updateScoresA12(), scoreA11 = getScoreA11(), scoreA12 = getScoreA12(), scoreA13 = getScoreA13())
+
+@app.route("/analytics13")
+def analytics13():
+    return render_template('analytics1.html', Q1 = round1, A11 = round1responses[0], A12 = round1responses[1], A13 = round1responses[2], A13P = updateScoresA13(), scoreA11 = getScoreA11(), scoreA12 = getScoreA12(), scoreA13 = getScoreA13())
+
+
+@app.route("/analytics2")
+def analytics2():
+    return render_template('analytics2.html', Q2 = round2, A21 = round2responses[0], A22 = round2responses[1], A23 = round2responses[2], A21P = updateScoresA21(), scoreA21 = getScoreA21(), scoreA22 = getScoreA12(), scoreA23 = getScoreA13())
+
+@app.route("/analytics22")
+def analytics22():
+    return render_template('analytics2.html', Q2 = round2, A21 = round2responses[0], A22 = round2responses[1], A23 = round2responses[2], A22P = updateScoresA22(), scoreA21 = getScoreA21(), scoreA22 = getScoreA12(), scoreA23 = getScoreA13())
+
+@app.route("/analytics23")
+def analytics23():
+    return render_template('analytics2.html', Q2 = round2, A21 = round2responses[0], A22 = round2responses[1], A23 = round2responses[2], A23P = updateScoresA23(), scoreA21 = getScoreA21(), scoreA22 = getScoreA12(), scoreA23 = getScoreA13())
+
+@app.route("/analytics3")
+def analytics3():
+    return render_template('analytics3.html', Q3 = round3, A31 = round3responses[0], A32 = round3responses[1], A33 = round3responses[2], A31P = updateScoresA31(), scoreA31 = getScoreA31(), scoreA32 = getScoreA32(), scoreA33 = getScoreA33())
+
+@app.route("/analytics32")
+def analytics32():
+    return render_template('analytics3.html', Q3 = round3, A31 = round3responses[0], A32 = round3responses[1], A33 = round3responses[2], A32P = updateScoresA32(), scoreA31 = getScoreA31(), scoreA32 = getScoreA32(), scoreA33 = getScoreA33())
+
+@app.route("/analytics33")
+def analytics33():
+    return render_template('analytics3.html', Q3 = round3, A31 = round3responses[0], A32 = round3responses[1], A33 = round3responses[2], A33P = updateScoresA33(), scoreA31 = getScoreA31(), scoreA32 = getScoreA32(), scoreA33 = getScoreA33())
+
+@app.route("/question3")
+def question3():
+    return render_template('question3.html', Q3 = round3, A31 = round3responses[0], A32 = round3responses[1], A33 = round3responses[2])
+
+@app.route("/winner")
+def winner():
+    return render_template('winner.html', P1 = getScoreP1() , P2 = getScoreP2() , P3 = getScoreP3(), P1user = P1user(), P2user = P2user(), P3user = P3user() )
+
 
 # Scores for each question
 @app.route("/score")
