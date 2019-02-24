@@ -17,6 +17,20 @@
     zoom : 110%;
   }
 </style>
+<script>
+  var timeleft = 5;
+  var downloadTimer = setInterval(function(){
+    // document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+    timeleft -= 1;
+    if(timeleft <= 0){
+      clearInterval(downloadTimer);
+    }
+    window.setTimeout(function () {
+          location.href = "question2";
+      }, 5000);
+  }, 1000);
+  </script>
+  <div id="countdown"></div>
   <script>
     let myChart = document.getElementById('myChart').getContext('2d');
 
@@ -67,7 +81,7 @@
 
         legend:{
           display:false,
-          position:'right',
+          position:'center',
           labels:{
             fontColor:'#000'
           }
@@ -86,9 +100,9 @@
       }
     });
   </script>
-
+<!-- 
 <a href="question2">
-    <button type="button" onclick= "Question3.html" class="btn btn-primary" style="height: 40px; width: 50px; font-size: 10px; border-radius: 20px;">Next</button>
-    </a>
+    <button type="button" onclick= "Question2.html" class="btn btn-primary" style="position: relative; left:980px; height: 40px; width: 50px; font-size: 10px; border-radius: 20px;">Next</button>
+    </a> -->
 </body>
 </html>

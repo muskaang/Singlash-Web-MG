@@ -17,6 +17,20 @@
         zoom : 110%;
       }
     </style>
+    <script>
+      var timeleft = 5;
+      var downloadTimer = setInterval(function(){
+        // document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+        timeleft -= 1;
+        if(timeleft <= 0){
+          clearInterval(downloadTimer);
+        }
+        window.setTimeout(function () {
+              location.href = "question2";
+          }, 5000);
+      }, 1000);
+      </script>
+      <div id="countdown"></div>
   <script>
     let myChart = document.getElementById('myChart').getContext('2d');
 
@@ -30,7 +44,7 @@
       data:{
         labels:['{{A31}}', '{{A32}}', '{{A33}}'],
         datasets:[{
-          label:'Ranking Score',
+          label:'Ranking Score',  
           data:[
           {{scoreA31}},
           {{scoreA32}},
